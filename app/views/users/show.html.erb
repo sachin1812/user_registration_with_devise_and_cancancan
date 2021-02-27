@@ -1,0 +1,44 @@
+<p>
+  <strong>Profile Picture:</strong>
+  <% if @user.avatar.attached? %>
+    <%= image_tag(url_for(@user.avatar), style: "width: 100px; display: block") %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @user.role.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Joined on:</strong>
+  <%= @joined_on %>
+</p>
+
+<p>
+  <strong>Last logged in on:</strong>
+  <%= @last_login %>
+</p>
+
+<p>
+  <strong>No. times logged in:</strong>
+  <%= @user.sign_in_count %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
